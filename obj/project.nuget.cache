@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZlgNVSTriReLZidbOusF8EJ15K9Rapvkclc+wF/i0qx2/hTQIU1YdOqp/P/xNBccXbxN/5FwtXI417SCZErk7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\garre\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Assortedarmaments\\Assortedarmaments.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\garre\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
