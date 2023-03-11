@@ -33,7 +33,7 @@ namespace Assortedarmaments.Projectiles
 
             ReturnSpeed = 35f;
             HomingOnOwnerStrength = 1.2f;
-            TravelOutFrames = 60;
+            TravelOutFrames = 30;
             DoTurn = true;
         }
         public override void AI()
