@@ -43,6 +43,8 @@ namespace Assortedarmaments.Npc
             NPC.value = 255f;
             NPC.aiStyle = 3;
             NPC.knockBackResist = 0;
+            NPC.boss = true;
+            NPC.npcSlots = 1;
             AIType = NPCID.BlueArmoredBones; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
             AnimationType = NPCID.BlueArmoredBones;
         }
@@ -58,8 +60,10 @@ namespace Assortedarmaments.Npc
         }
         public override void AI()
         {
+            
             NPC.TargetClosest(true);
         }
+     
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PainTrain>(), 50));
@@ -77,6 +81,11 @@ namespace Assortedarmaments.Npc
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
+            if (NPC.CountNPCS(ModContent.NPCType<Deathstalker>()) == 2)
+            {
+                return SpawnCondition.DesertCave.Chance * 0f;
+            }
+            else
             return SpawnCondition.DesertCave.Chance * 0.01f;
         }
     }
