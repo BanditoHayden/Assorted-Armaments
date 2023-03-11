@@ -113,7 +113,6 @@ namespace Assortedarmaments.Projectiles
                 Main.LocalPlayer.ApplyDamageToNPC(closeNPCs[i], damage / 3, 0f, 0, false);
                 LightningHelper.MakeDust(startPos, closeNPCs[i].Center);
             }
-            SoundEngine.PlaySound(new SoundStyle("Terraria/Sounds/Thunder_0"), Projectile.position);
 
         }
         public class LightningHelper
