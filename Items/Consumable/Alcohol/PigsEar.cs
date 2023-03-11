@@ -28,7 +28,7 @@ namespace Assortedarmaments.Items.Consumable.Alcohol
             Item.maxStack = 30;
             Item.consumable = true;
             Item.rare = ItemRarityID.Orange;
-            Item.value = Item.buyPrice(gold: 15);
+            Item.value = Item.buyPrice(gold: 1);
             Item.buffType = ModContent.BuffType<Buffs.Consumable.PigsEarBuff>();
             Item.buffTime = 3600;
         }
