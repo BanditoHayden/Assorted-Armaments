@@ -1,5 +1,5 @@
 displayName = Assorted Armaments
 author = Bandito
-version = 1.4.6
+version = 1.4.7
 homepage = https://discord.gg/dNunYXmRbn
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*

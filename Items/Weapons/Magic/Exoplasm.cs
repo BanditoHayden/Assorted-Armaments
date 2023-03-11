@@ -9,10 +9,12 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Assortedarmaments.Projectiles;
+using Assortedarmaments.Dusts;
+using Assortedarmaments.Items.Materials;
 
 namespace Assortedarmaments.Items.Weapons.Magic
 {
-    public class Brainstalks : ModItem
+    public class Exoplasm : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -28,24 +30,25 @@ namespace Assortedarmaments.Items.Weapons.Magic
             Item.rare = ItemRarityID.Green;
 
             // Use Properties
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.useTime = 7;
+            Item.useAnimation = 7;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noUseGraphic = false;
-            Item.UseSound = SoundID.NPCHit13;
+            Item.UseSound = SoundID.Item9;
             Item.autoReuse = true;
             // Weapon Properties
-            Item.damage = 24;
-            Item.crit = 4;
+            Item.damage = 84;
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Magic;
-            Item.mana = 10;
+            Item.mana = 5;
             // Projectile Properties
-            Item.shoot = ModContent.ProjectileType<Brain>();
+            Item.shoot = ModContent.ProjectileType<SoulTear>();
             Item.shootSpeed = 15f;
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
+            int projectileCount = 2;
+
             Vector2 playerPos = player.RotatedRelativePoint(player.MountedCenter, true);
             float speed = Item.shootSpeed;
             float xPos = (float)Main.mouseX + Main.screenPosition.X - playerPos.X;
@@ -72,11 +75,22 @@ namespace Assortedarmaments.Items.Weapons.Magic
             for (int i = 0; i < 100; i++)
             {
                 Vector2 outerdustring = Main.rand.NextVector2CircularEdge(0.2f, 0.2f);
-                Dust Dusty = Dust.NewDustPerfect(obj.position, DustID.Firework_Red, outerdustring * 5, Scale: 0.5f);
+                Dust Dusty = Dust.NewDustPerfect(obj.position, ModContent.DustType<GhostDust>(), outerdustring * 5, Scale: 0.5f);
                 Dusty.noGravity = true;
             }
-            
+
+
             return false;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+           .AddIngredient(ModContent.ItemType<SoulPiece>(), 12)
+           .AddIngredient(ItemID.SkyFracture, 1)
+           .AddIngredient(ItemID.Ectoplasm, 12)
+           .AddTile(TileID.AdamantiteForge)
+           .Register();
+
         }
     }
 }
