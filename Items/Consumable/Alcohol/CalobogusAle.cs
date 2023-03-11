@@ -30,7 +30,7 @@ namespace Assortedarmaments.Items.Consumable.Alcohol
             Item.rare = ItemRarityID.Orange;
             Item.value = Item.buyPrice(gold: 1);
             Item.buffType = BuffID.Tipsy;
-            Item.buffTime = 3600;
+            Item.buffTime = 7200;
         }
         public override void OnConsumeItem(Player player)
         {
