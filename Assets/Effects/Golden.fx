@@ -1,7 +1,7 @@
 sampler uTextImage : register(s0); 
 sampler uGoldenBar : register(s1); 
 float uTime; 
-
+// Test
 float4 PixelShaderFunction(float2 coords : TEXCOORD0) : COLOR0
 {
     float4 color = tex2D(uTextImage, coords);
