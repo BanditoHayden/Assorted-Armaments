@@ -43,7 +43,6 @@ namespace Assortedarmaments.Npc
             NPC.value = 255f;
             NPC.aiStyle = 3;
             NPC.knockBackResist = 0;
-            NPC.boss = true;
             NPC.npcSlots = 1;
             AIType = NPCID.BlueArmoredBones; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
             AnimationType = NPCID.BlueArmoredBones;
