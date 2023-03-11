@@ -8,29 +8,21 @@ This mod includes:
 - Legendary Weapons with unique abilities!
 - Cross mod compatibility (Calamity)
 
-1.3 Update Changelog
-The Wild West Update!
-Added a new npc called the cowboy!
-Added a new mini boss called the deathstalker, he can be found in the deserts caves
+1.4 Update Changelog
 New Items
-Buff Potions
-- Fireball (Sold by Cowboy) - Increases melee damage by 10%, but you are ignited
-- Wild West Cocktail (Sold by Cowboy) - Increases ranged damage by 10%, but your less resistant
-- Pig's Ear (Sold by Cowboy) - Increases magic damage by 10%, but you feel slower
-- Rye Whiskey (Sold by Cowboy) - Increases summon damage by 10%, but your grounded
-- Moonshine (Sold by Cowboy) - Increases defense by 10, but you feel slower 
-- Calobogus Ale (Sold by Cowboy) - You feel tipsy, and satisfied?"
 Weapons
-- A unique revolver sold by the Cowboy
-- Dark Dawn (Mothron Drop) - magic weapon that fires moons from the sky
-- Infinity (Queen Slime Master Mode) - Ranged weapon that doesn't consume ammo
-- Pain Train (Legendary Armament) - dropped rarely by the deathstalker
-- Added Calamity Compatibility for Legendary Armaments
-Accessories
-- Strawberry Heart (Sold by Dryad) - Grants a double jump
-- Polyute (Master Mode Skeletron Prime) - Projectiles have a 10% chance on hit to release homing bullets
-- Steroids (Crafted) - Increased melee speed
-- Synthol (Crafted) - Hardmode upgrade of Steroids, increased melee speed and crit chance
+- Moonlight Greatsword (Legendary Armament) - Its legendary ability allows it to fire sword slashes
+Old Nail (Sold by Skeleton Merchant in hardmode) - Unique weapon with its own UI, gain soul charge by killing enemies, when at 100% right click to unleash a powerful dash
+Duality (Crafted) - Hardmode Magic weapon which fires 2 projectiles with 100% crit rate. They move in a wave and intersect with eachother
+Soul Set (Sword,Bow,Staff)
+The Swarm (Crafted) - Hardmode Yoyo which releases bees on hit
+Occular Repeater (Dropped by Eye Of Cthulu) - Bow which converts wooden arrows into eye balls which bounce off of enemies and tiles
+Lightning Blade (Crafted) - Hardmode Broadsword which fires a lightning bolt which spreads electricity to nearby enemies on death
+Lightning Spear (Crafted) - Hardmode Spear which spreads electricity to nearby enemies on  hit
+Eternal Flames (Dropped by Wall of Flesh) - Boomerang which seeks enemies and inflicts on fire
+Enemies
+Ghostling (Graveyard Biome) - A miniature ghost which fades away after hitting you  (Graveyard Biome) - A miniature ghost which fades away after hitting you 
+
 And much more!
 A more detailed changelog can be found in the discord
 Join the discord! https://discord.gg/dNunYXmRbn
