@@ -44,6 +44,7 @@ namespace Assortedarmaments.Items.Weapons.Melee
         {
             CreateRecipe()
            .AddIngredient(ItemID.Cloud, 13)
+
             .AddIngredient(ItemID.RainCloud, 13)
            .AddTile(TileID.Anvils)
            .Register();
