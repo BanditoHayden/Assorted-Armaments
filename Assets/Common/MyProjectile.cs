@@ -1,4 +1,7 @@
-﻿using Assortedarmaments.Projectiles;
+﻿using Assortedarmaments.Buffs;
+using Assortedarmaments.Items.Weapons.Melee;
+using Assortedarmaments.Items.Weapons.Ranged;
+using Assortedarmaments.Projectiles;
 using Steamworks;
 using System;
 using System.Collections.Generic;
@@ -28,26 +31,19 @@ namespace Assortedarmaments.Assets.Common
             Player player = Main.player[Main.myPlayer];
             MyPlayer modPlayer = player.GetModPlayer<MyPlayer>();
             var entitySource = Projectile.GetSource_None();
-            if (modPlayer.Polyute && projectile.friendly && projectile.CountsAsClass(DamageClass.Ranged) && Main.rand.NextBool(10))
+            if (modPlayer.Polyute && projectile.friendly && Main.rand.NextBool(10))
             {
                 Projectile.NewProjectile(entitySource, target.Center.X, target.Center.Y - 100, Main.rand.Next(20, 21) * .25f, Main.rand.Next(20,21) * .25f, ProjectileID.ChlorophyteBullet, player.HeldItem.damage, 0f, projectile.owner);
 
             }
-            if (modPlayer.Polyute && projectile.friendly && projectile.CountsAsClass(DamageClass.Magic) && Main.rand.NextBool(10))
+            if (player.HeldItem.type == ModContent.ItemType<LivingWoodBow>())
             {
-                Projectile.NewProjectile(entitySource, target.Center.X, target.Center.Y - 100, Main.rand.Next(20, 21) * .25f, Main.rand.Next(20, 21) * .25f, ProjectileID.ChlorophyteBullet, player.HeldItem.damage, 0f, projectile.owner);
-
+                if (crit)
+                {
+                    player.Heal(5);
+                }
             }
-            if (modPlayer.Polyute && projectile.friendly && projectile.CountsAsClass(DamageClass.Melee) && Main.rand.NextBool(10))
-            {
-                Projectile.NewProjectile(entitySource, target.Center.X, target.Center.Y - 100, Main.rand.Next(20, 21) * .25f, Main.rand.Next(20, 21) * .25f, ProjectileID.ChlorophyteBullet, player.HeldItem.damage, 0f, projectile.owner);
 
-            }
-            if (modPlayer.Polyute && projectile.friendly && projectile.CountsAsClass(DamageClass.Summon) && Main.rand.NextBool(10))
-            {
-                Projectile.NewProjectile(entitySource, target.Center.X, target.Center.Y - 100, Main.rand.Next(20, 21) * .25f, Main.rand.Next(20, 21) * .25f, ProjectileID.ChlorophyteBullet, player.HeldItem.damage, 0f, projectile.owner);
-
-            }
         }
     }
 }

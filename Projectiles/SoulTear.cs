@@ -26,15 +26,23 @@ namespace Assortedarmaments.Projectiles
         }
         public override void AI()
         {
-            float maxDetectRadius = 600f;
+            float maxDetectRadius = 300f;
             float projSpeed = 20f; 
 
             NPC closestNPC = FindClosestNPC(maxDetectRadius);
             if (closestNPC == null)
+            {
+                Projectile.rotation = Projectile.velocity.ToRotation();
                 return;
-
+            }
+            else
             Projectile.velocity = (closestNPC.Center - Projectile.Center).SafeNormalize(Vector2.Zero) * projSpeed;
             Projectile.rotation = Projectile.velocity.ToRotation();
+
+
+
+
+
         }
         public override void Kill(int timeLeft)
         {

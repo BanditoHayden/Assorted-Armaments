@@ -1,6 +1,6 @@
 This mod includes:
-- 40+ Items
-- 19 Weapons
+- 50+ Items
+- 22 Weapons
 - 16 Accessories
 - 1 Town Npc
 - 2 Enemies
@@ -8,7 +8,7 @@ This mod includes:
 - Legendary Weapons with unique abilities!
 - Cross mod compatibility (Calamity)
 
-1.4 Update Changelog
+1.4+ Update Changelog
 New Items
 Weapons
 - Moonlight Greatsword (Legendary Armament) - Its legendary ability allows it to fire sword slashes
@@ -20,6 +20,10 @@ Weapons
 - Lightning Blade (Crafted) - Hardmode Broadsword which fires a lightning bolt which spreads electricity to nearby enemies on death
 - Lightning Spear (Crafted) - Hardmode Spear which spreads electricity to nearby enemies on  hit
 - Eternal Flames (Dropped by Wall of Flesh) - Boomerang which seeks enemies and inflicts on fire
+- Exoplasm (Crafted) - A post plantera sky fracture upgrade
+- Living Wood Sword (Crafted)
+- Living Wood Bow (Crafted)
+- Living Wood Staff (Crafted ) - Critical hits heal you
 Enemies
 - Ghostling (Graveyard Biome) - A miniature ghost which fades away after hitting you  (Graveyard Biome) - A miniature ghost which fades away after hitting you 
 
