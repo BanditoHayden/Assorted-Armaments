@@ -2,6 +2,8 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
+using Assortedarmaments.Assets.Common;
+using Terraria.DataStructures;
 
 namespace Assortedarmaments.Items.Weapons.Ranged
 {
@@ -41,10 +43,18 @@ namespace Assortedarmaments.Items.Weapons.Ranged
         {
             return Main.rand.NextFloat() >= 1f;
         }
+        //public override void HoldItem(Player player) => player.phantasmTime = 12;
+        public override bool? UseItem(Player player)
+        {
+            Item.useTime *= (int)(Item.useTime * 0.15);
+            Item.useAnimation *= (int)(Item.useAnimation * 0.15);
+
+            return base.UseItem(player);
+        }
         public override Vector2? HoldoutOffset()
         {
             return new Vector2(-6, 0);
         }
-
+      
     }
 }

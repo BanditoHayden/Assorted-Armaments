@@ -19,6 +19,5 @@
     <Folder Include="Dusts\Particles\" />
     <Folder Include="Items\Weapons\CrossMod\" />
     <Folder Include="Items\Weapons\Upgrade\" />
-    <Folder Include="Projectiles\Held\" />
   </ItemGroup>
 </Project>

@@ -1,11 +1,6 @@
 ﻿using Assortedarmaments.Assets.Common;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -36,24 +31,77 @@ namespace Assortedarmaments.Projectiles
             Projectile.timeLeft = 600;
             Projectile.penetrate = 10;
         }
+        float maxDetectRadius = 1000f;
         public override void AI()
         {
             Dust dust = Dust.NewDustPerfect(Projectile.Center, DustID.Clentaminator_Purple, new Vector2(Main.rand.NextFloat(-0.2f, 0.2f)), 0, default, 1f);
             dust.noGravity = true;
             Player player = Main.player[Projectile.owner];
 
-            float maxDetectRadius = 1000f; 
             float projSpeed = 12f;
             NPC closestNPC = FindClosestNPC(maxDetectRadius);
 
             if (closestNPC == null)
             {
                 Projectile.Kill();
+               
                 return;
             }
-
             Projectile.velocity = (closestNPC.Center - Projectile.Center).SafeNormalize(Vector2.Zero) * projSpeed;
             Projectile.rotation = Projectile.velocity.ToRotation();
+        }
+        bool dontfuckingheal;
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        {
+           if (target.life <= 0)
+            {
+                Projectile.penetrate += 1;
+                dontfuckingheal = true;
+            }
+        }
+        public override void Kill(int timeLeft)
+        {
+            Player player = Main.player[Projectile.owner];
+            NPC closestNPC = FindClosestNPC(maxDetectRadius);
+            if (closestNPC == null)
+            {
+                if (!dontfuckingheal)
+                {
+                    player.Heal(player.statLifeMax2 / 4);
+                }
+            }
+            player.GetModPlayer<MyPlayer>().ScreenShake = 8;
+            SoundEngine.PlaySound(SoundID.NPCDeath6, Projectile.position);
+            for (int i = 0; i < 180; i++)
+            {
+                Vector2 dustPos = Projectile.Center + new Vector2(46, 0).RotatedBy(MathHelper.ToRadians(i * 2));
+                Dust dust = Dust.NewDustPerfect(dustPos, DustID.CorruptTorch);
+                dust.noGravity = true;
+            }
+        }
+        public NPC FindClosestNPC(float maxDetectDistance)
+        {
+            NPC closestNPC = null;
+
+            float sqrMaxDetectDistance = maxDetectDistance * maxDetectDistance;
+
+            for (int k = 0; k < Main.maxNPCs; k++)
+            {
+                NPC target = Main.npc[k];
+
+                if (target.CanBeChasedBy())
+                {
+                    float sqrDistanceToTarget = Vector2.DistanceSquared(target.Center, Projectile.Center);
+
+                    if (sqrDistanceToTarget < sqrMaxDetectDistance)
+                    {
+                        sqrMaxDetectDistance = sqrDistanceToTarget;
+                        closestNPC = target;
+                    }
+                }
+            }
+
+            return closestNPC;
         }
         public override bool PreDraw(ref Color lightColor)
         {
@@ -69,44 +117,6 @@ namespace Assortedarmaments.Projectiles
             }
 
             return true;
-        }
-      
-        public NPC FindClosestNPC(float maxDetectDistance)
-        {
-            NPC closestNPC = null;
-
-            float sqrMaxDetectDistance = maxDetectDistance * maxDetectDistance;
-
-            for (int k = 0; k < Main.maxNPCs; k++)
-            {
-                NPC target = Main.npc[k];
-               
-                if (target.CanBeChasedBy())
-                {
-                    float sqrDistanceToTarget = Vector2.DistanceSquared(target.Center, Projectile.Center);
-
-                    if (sqrDistanceToTarget < sqrMaxDetectDistance)
-                    {
-                        sqrMaxDetectDistance = sqrDistanceToTarget;
-                        closestNPC = target;
-                    }
-                }
-            }
-
-            return closestNPC;
-        }
-       
-        public override void Kill(int timeLeft)
-        {
-            Player player = Main.player[Projectile.owner];
-            player.GetModPlayer<MyPlayer>().ScreenShake = 8;
-            SoundEngine.PlaySound(SoundID.NPCDeath6, Projectile.position);
-            for (int i = 0; i < 180; i++)
-            {
-                Vector2 dustPos = Projectile.Center + new Vector2(46, 0).RotatedBy(MathHelper.ToRadians(i * 2));
-                Dust dust = Dust.NewDustPerfect(dustPos, DustID.CorruptTorch);
-                dust.noGravity = true;
-            }
         }
     }
 }

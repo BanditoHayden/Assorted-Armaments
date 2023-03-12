@@ -45,7 +45,8 @@ namespace Assortedarmaments.Assets.Common
         public bool Polyute;
         public bool Upgrade1;
         public bool Upgrade2;
-
+        public float testspeedmulti;
+        public bool resetspeed;
 
        
         public override void ResetEffects()
@@ -63,6 +64,7 @@ namespace Assortedarmaments.Assets.Common
             Polyute = false;
             Upgrade1 = false;
             Upgrade2 = false;
+
         }
 
       
@@ -189,7 +191,14 @@ namespace Assortedarmaments.Assets.Common
 
                 Player.Heal(120);
             }
-            
+            if (PlayerInput.Triggers.JustPressed.MouseLeft)
+            {
+                resetspeed = false;
+            }
+            if (PlayerInput.Triggers.JustReleased.MouseLeft);
+            {
+                resetspeed = true;
+            }
             if (LegendaryHoteky)
             {
                 if (Player.HeldItem.type == ModContent.ItemType<AeroScimitar>() && !Player.HasBuff(ModContent.BuffType<ArmamentCooldown>()))
