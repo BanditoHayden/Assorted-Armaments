@@ -21,8 +21,8 @@ Weapons
 - Lightning Spear (Crafted) - Hardmode Spear which spreads electricity to nearby enemies on  hit
 - Eternal Flames (Dropped by Wall of Flesh) - Boomerang which seeks enemies and inflicts on fire
 - Exoplasm (Crafted) - A post plantera sky fracture upgrade
-- Living Wood Sword (Crafted)
-- Living Wood Bow (Crafted)
+- Living Wood Sword (Crafted) - Critical hits heal you
+- Living Wood Bow (Crafted) - Critical hits heal you
 - Living Wood Staff (Crafted ) - Critical hits heal you
 Enemies
 - Ghostling (Graveyard Biome) - A miniature ghost which fades away after hitting you  (Graveyard Biome) - A miniature ghost which fades away after hitting you 

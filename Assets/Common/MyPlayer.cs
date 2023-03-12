@@ -61,6 +61,8 @@ namespace Assortedarmaments.Assets.Common
             HeartSynthesizer = false;
             canDoubleJump = false;
             Polyute = false;
+            Upgrade1 = false;
+            Upgrade2 = false;
         }
 
       
