@@ -65,7 +65,7 @@ namespace Assortedarmaments.Npc
      
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PainTrain>(), 50));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PainTrain>(), 100));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DeathstalkerShell>(), 2));
 
         }

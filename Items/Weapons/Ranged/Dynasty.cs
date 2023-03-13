@@ -30,12 +30,12 @@ namespace Assortedarmaments.Items.Weapons.Ranged
             Item.autoReuse = true;
 
             // Weapon Properties
-            Item.damage = 32;
+            Item.damage = 28;
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Ranged;
             // Projectile Properties
             Item.shoot = ModContent.ProjectileType<DynastyProj>();
-            Item.shootSpeed = 10f;
+            Item.shootSpeed = 12f;
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {

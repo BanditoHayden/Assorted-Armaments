@@ -74,7 +74,7 @@ namespace Assortedarmaments.Assets.Common
             }
             if (npc.type == NPCID.Harpy)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AeroScimitar>(), 200));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AeroScimitar>(), 300));
             }
             if (npc.type == NPCID.BlueJellyfish)
             {
@@ -95,7 +95,7 @@ namespace Assortedarmaments.Assets.Common
             }
             if (npc.type == NPCID.Ghost)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MoonlightGreatsword>(), 200));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MoonlightGreatsword>(), 300));
             }
             if (npc.type == NPCID.SkeletronPrime)
             {
