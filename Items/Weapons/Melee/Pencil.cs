@@ -28,7 +28,6 @@ namespace Assortedarmaments.Items.Weapons.Melee
             Item.autoReuse = false;
             // Weapon Properties
             Item.damage = 15;
-            Item.crit = 4;
             Item.knockBack = 6f;
             Item.DamageType = DamageClass.Melee;
             // Projectile Properties
@@ -41,7 +40,7 @@ namespace Assortedarmaments.Items.Weapons.Melee
                       .AddIngredient(RecipeGroupID.IronBar, 10)
                       .AddTile(TileID.WorkBenches)
                       .Register();
-        }
+        }   
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
             base.OnHitNPC(player, target, damage, knockBack, crit);

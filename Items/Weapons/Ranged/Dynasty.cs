@@ -18,7 +18,7 @@ namespace Assortedarmaments.Items.Weapons.Ranged
             // Common Properties
             Item.width = 30;
             Item.height = 30;
-            Item.rare = 1;
+            Item.rare = 7;
             Item.value = Item.buyPrice(gold: 65);
             Item.noMelee = true;
             // Use Properties

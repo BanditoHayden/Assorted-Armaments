@@ -3,7 +3,9 @@ using Assortedarmaments.Items.Consumable;
 using Assortedarmaments.Items.Weapons.Magic;
 using Assortedarmaments.Items.Weapons.Melee;
 using Assortedarmaments.Items.Weapons.Ranged;
+using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,7 +14,18 @@ namespace Assortedarmaments.Assets.Common
 {
     public class MyItem : GlobalItem
     {
-       
+        public override bool? UseItem(Item item, Player player)
+        {
+
+            // Main.NewText(item.useTime);
+            return true;
+        }
+        public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            // Main.NewText(item.useTime);
+
+            return true;
+        }
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
         {
 

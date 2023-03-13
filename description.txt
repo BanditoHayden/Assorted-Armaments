@@ -1,6 +1,6 @@
 This mod includes:
 - 50+ Items
-- 22 Weapons
+- 24 Weapons
 - 16 Accessories
 - 1 Town Npc
 - 2 Enemies
