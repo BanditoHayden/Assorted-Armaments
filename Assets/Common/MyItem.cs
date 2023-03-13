@@ -21,6 +21,11 @@ namespace Assortedarmaments.Assets.Common
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CorruptedJoustingLance>(), 4));
 
             }
+            if (item.type == ItemID.EyeOfCthulhuBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<OccularRepeater>(), 4));
+
+            }
             if (item.type == ItemID.SkeletronPrimeBossBag)
             {
                 itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Polyute>(), 15));

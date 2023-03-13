@@ -147,6 +147,11 @@ namespace Assortedarmaments.Assets.Common
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrittleBones>(), 10));
 
             }
+            if (npc.type == NPCID.EyeofCthulhu)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<OccularRepeater>(), 4));
+
+            }
             if (npc.type == NPCID.WallofFlesh)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedT>(), 10));

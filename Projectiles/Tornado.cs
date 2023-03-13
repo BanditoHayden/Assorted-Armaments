@@ -29,7 +29,16 @@ namespace Assortedarmaments.Projectiles
         }
 
 
+        public static void ProjRotateAroundSomething(Projectile proj, double dist, float rotateAmount, Vector2 rotationPos)
+        {
+            double deg = proj.ai[1];
+            double rad = deg * (Math.PI / 180);
+            proj.ai[1] += rotateAmount;
 
+            proj.position.X = rotationPos.X - (int)(Math.Cos(rad) * dist) - proj.width / 2;
+            proj.position.Y = rotationPos.Y - (int)(Math.Sin(rad) * dist) - proj.height / 2;
+            proj.netUpdate = true;
+        }
         public override void AI()
         {
             if (++Projectile.frameCounter >= 10)
@@ -39,7 +48,7 @@ namespace Assortedarmaments.Projectiles
                     Projectile.frame = 0;
             }
             Projectile.ai[0] += 1f;
-            if (Projectile.ai[0] >= 1f)
+              if (Projectile.ai[0] >= 1f)
             {
                 Projectile.velocity *= 1.00f;
             }
@@ -53,8 +62,20 @@ namespace Assortedarmaments.Projectiles
                 Projectile.rotation += MathHelper.Pi;
 
             }
+            
+            /*
+            Player projOwner = Main.player[Projectile.owner];
 
+            double deg = Projectile.ai[1];
+            double rad = deg * (Math.PI / 180);
+            Projectile.ai[1] += 360;
+
+            Projectile.position.X = projOwner.Center.X - (int)(Math.Cos(rad) * 2) - Projectile.width / 2;
+            Projectile.position.Y = projOwner.Center.Y - (int)(Math.Sin(rad) * 2) - Projectile.height / 2;
+            Projectile.netUpdate = true;
+            */
         }
+        
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
             Projectile.velocity = Vector2.Zero;

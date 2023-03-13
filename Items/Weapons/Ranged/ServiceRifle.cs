@@ -41,25 +41,7 @@ namespace Assortedarmaments.Items.Weapons.Ranged
             Item.shootSpeed = 10f;
          //  Item.useAmmo = AmmoID.Bullet;
         }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-            Color[] colors = new Color[] { Color.Black, Color.White};
-            int projectileCount = 2;
-
-            for (int i = 0; i < projectileCount; i++)
-            {
-                // Be wary of dividing by zero when projectileCount is 1
-                float waveOffset = i / (float)(projectileCount - 1);
-
-                Projectile projectile = Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback, player.whoAmI);
-
-                SineWave modProjectile = projectile.ModProjectile as SineWave;
-                modProjectile.waveOffset = waveOffset * (1f - 1f / projectileCount); 
-                modProjectile.drawColor = colors[i];
-            }
-
-            return false;
-        }
+       
 
         public override Vector2? HoldoutOffset()
         {
