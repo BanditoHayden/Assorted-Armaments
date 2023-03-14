@@ -1,4 +1,5 @@
 ﻿using Assortedarmaments.Items.Materials;
+using Assortedarmaments.Items.Weapons.Melee;
 using Assortedarmaments.Items.Weapons.Ranged;
 using Microsoft.Xna.Framework;
 using System;
@@ -200,7 +201,7 @@ namespace Assortedarmaments.Npc
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulPiece>(), 10));
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PainTrain>(), 200));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MoonlightGreatsword>(), 200));
 
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
