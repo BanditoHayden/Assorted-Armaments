@@ -179,7 +179,7 @@ namespace Assortedarmaments.Assets.Common
             int AmountHurt = Player.statLifeMax2/4;
             if (CursedTridentHotkey && CursedTrident && !Player.dead)
             {
-                Player.Hurt(PlayerDeathReason.ByCustomReason(("Claimed by the underworld")), AmountHurt, 1);
+                Player.Hurt(PlayerDeathReason.ByCustomReason((Player.name + "Was claimed by the underworld")), AmountHurt, 1);
                 Projectile.NewProjectile(entitySource, Main.MouseWorld, velocity, type, 300, 1, Player.whoAmI);
             }
             if (TimestopHotkey && Hourglass && !Player.dead && !Player.HasBuff(BuffID.PotionSickness))
