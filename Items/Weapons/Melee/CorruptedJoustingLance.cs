@@ -30,7 +30,7 @@ namespace Assortedarmaments.Items.Weapons.Melee
 
             Item.SetWeaponValues(25, 12f, 0); // A special method that sets the damage, knockback, and bonus critical strike chance.
 
-            Item.SetShopValues(ItemRarityColor.LightRed4, Item.buyPrice(silver: 60)); 
+            Item.SetShopValues(ItemRarityColor.Green2, Item.buyPrice(silver: 60)); 
 
             Item.channel = true;
 
