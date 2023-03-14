@@ -99,9 +99,13 @@ namespace Assortedarmaments.Assets.Common
                 Player.ClearBuff(ModContent.BuffType<Steamy>());
 
             }
-          
+            if (Player.HeldItem.type != ModContent.ItemType<MoonlightGreatsword>() && Player.HasBuff(ModContent.BuffType<MoonlightBlessing>()))
+            {
+                Player.ClearBuff(ModContent.BuffType<MoonlightBlessing>());
 
-        
+            }
+
+
 
         }
       
