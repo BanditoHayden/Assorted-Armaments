@@ -30,7 +30,7 @@ namespace Assortedarmaments.Items.Accessory
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            tooltips.Add(new TooltipLine(Mod, "Assortedarmaments", $"Don't deal with the Devil\nPress {Keybinds.CursedTrident?.GetAssignedKeys()[0] ?? "UNBOUND"} to spawn a homing trident at the position of your cursor\nIf the trident has no target it'll implode on itself and heal you\nConsumes 25% of the players max health on use"));
+            tooltips.Add(new TooltipLine(Mod, "Assortedarmaments", $"Don't deal with the Devil\nPress {Keybinds.CursedTrident?.GetAssignedKeys()[0] ?? "UNBOUND"} to spawn a homing trident at the position of your cursor\nIf the trident has no target it'll implode on itself\nConsumes 25% of the players max health on use"));
         }
         public override Color? GetAlpha(Color lightColor)
         {

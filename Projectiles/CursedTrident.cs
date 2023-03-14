@@ -65,10 +65,6 @@ namespace Assortedarmaments.Projectiles
             NPC closestNPC = FindClosestNPC(maxDetectRadius);
             if (closestNPC == null)
             {
-                if (!dontfuckingheal)
-                {
-                    player.Heal(player.statLifeMax2 / 4);
-                }
             }
             player.GetModPlayer<MyPlayer>().ScreenShake = 8;
             SoundEngine.PlaySound(SoundID.NPCDeath6, Projectile.position);
